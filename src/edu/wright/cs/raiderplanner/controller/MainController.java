@@ -132,6 +132,7 @@ public class MainController {
 						study.getPlanner().addNotification(not);
 						MainController.setSpc(study);
 						plannerFile = MainController.ui.savePlannerFileDialog();
+						MainController.save();
 						loadFile(plannerFile);
 						/*This is cating a general exception because the
 						 * createAccount method throws a general exception*/
@@ -143,7 +144,6 @@ public class MainController {
 						if (plannerFile.getParentFile().exists()) {
 							if (plannerFile.getParentFile().canRead()) {
 								if (plannerFile.getParentFile().canWrite()) {
-									MainController.setPlannerFile(plannerFile);
 									MainController.save();
 								} else {
 									UiManager.reportError("Directory can't be written to.");
@@ -190,6 +190,7 @@ public class MainController {
 					study.getPlanner().addNotification(not);
 					MainController.setSpc(study);
 					plannerFile = MainController.ui.savePlannerFileDialog();
+					MainController.save();
 					loadFile(plannerFile);
 					/*This is cating a general exception because the
 					 * createAccount method throws a general exception*/
@@ -201,7 +202,6 @@ public class MainController {
 					if (plannerFile.getParentFile().exists()) {
 						if (plannerFile.getParentFile().canRead()) {
 							if (plannerFile.getParentFile().canWrite()) {
-								MainController.setPlannerFile(plannerFile);
 								MainController.save();
 							} else {
 								UiManager.reportError("Directory can not be written to.");
