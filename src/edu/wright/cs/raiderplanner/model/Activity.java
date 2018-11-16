@@ -26,12 +26,11 @@ import edu.wright.cs.raiderplanner.controller.MenuController;
 import edu.wright.cs.raiderplanner.view.UiManager;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
-import java.util.Locale;
 
 /**
  * An Activity with a duration and an associated list of tasks.
@@ -58,7 +57,7 @@ public class Activity extends Event {
 	 */
 	public Activity(String name, String details, LocalDate date, int duration,
 			int activityQuantity, String type) {
-		super(date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")) + "T00:00:01Z");
+		super(date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy")) + "T00:00:01Z");
 		this.setName(name);
 		this.setDetails(details);
 		this.duration = duration;
@@ -108,10 +107,7 @@ public class Activity extends Event {
 	 * @return a formatted String representation of this Activity's date.
 	 */
 	public String getDateString() {
-		// TODO: fix this to use SimpleDateFormat
-		return this.date.getDisplayName(Calendar.DAY_OF_WEEK, Calendar.LONG, Locale.getDefault())
-				+ " " + this.date.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())
-				+ " " + this.date.get(Calendar.DAY_OF_MONTH);
+		return new SimpleDateFormat("MM/dd/yyyy").format(super.getDate());
 	}
 
 	/**

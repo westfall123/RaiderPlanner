@@ -55,7 +55,7 @@ public class Task extends ModelEntity {
 	 * @return Formatted String for the variable deadline
 	 */
 	public String getDeadline() {
-		return new SimpleDateFormat("dd/MM/yyyy").format(this.deadline.getDate());
+		return new SimpleDateFormat("MM/dd/yyyy").format(this.deadline.getDate());
 	}
 
 	/**
@@ -331,7 +331,7 @@ public class Task extends ModelEntity {
 	 * @param date date to be set as a new deadline
 	 */
 	public void setDeadline(LocalDate date) {
-		this.deadline.setDate(date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
+		this.deadline.setDate(date.format(DateTimeFormatter.ofPattern("MM/dd/yyyy"))
 				+ "T00:00:01Z");
 	}
 
