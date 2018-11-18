@@ -100,7 +100,7 @@ public class RequirementController implements Initializable {
 	// Labels:
 	@FXML private Label title;
 	@FXML private Label completed;
-	
+
 	// Tooltips:
 	@FXML private Label nameTooltip;
 	@FXML private Label timeTooltip;
@@ -329,14 +329,17 @@ public class RequirementController implements Initializable {
 			// =================
 		}
 		// =================
-		
-		
+
 		// Initialize Tooltips:
 		nameTooltip.setTooltip(new Tooltip("Enter the name of your new requirement."));
-		timeTooltip.setTooltip(new Tooltip("Enter an approximate time that it would take \nto complete this requirement"));
-		quantityTooltip.setTooltip(new Tooltip("Enter how many of this requirement is required."));
-		detailsTooltip.setTooltip(new Tooltip("Enter any additional information pertaining to \nthis requirement"));
-		headingTooltip.setTooltip(new Tooltip("A Requiremnet is something that needs to be finished\nbefore finishing a larger task."));
+		timeTooltip.setTooltip(new Tooltip("Enter an approximate time that it would take "
+				+ "\nto complete this requirement"));
+		quantityTooltip.setTooltip(new Tooltip("Enter how many of this requirement is "
+				+ "required."));
+		detailsTooltip.setTooltip(new Tooltip("Enter any additional information pertaining "
+				+ "to \nthis requirement"));
+		headingTooltip.setTooltip(new Tooltip("A Requiremnet is something that needs to be "
+				+ "finished\nbefore finishing a larger task."));
 
 		Platform.runLater(() -> this.pane.requestFocus());
 	}
